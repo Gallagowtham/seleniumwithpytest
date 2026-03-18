@@ -17,7 +17,7 @@ pipeline {
 
         stage('Generate Allure Report') {
             steps {
-                bat 'allure generate results -o report --clean'
+                bat '"C:\\allure\\allure-2.38.0\\allure-2.38.0\\bin\\allure.bat" generate results -o report --clean'
             }
         }
     }
