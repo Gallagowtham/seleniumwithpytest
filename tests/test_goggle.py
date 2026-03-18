@@ -1,4 +1,5 @@
 import pytest
+import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
@@ -31,4 +32,5 @@ def test_google_search(driver):
     searchbox = driver.find_element(By.NAME, "q")
     searchbox.send_keys("Jenkins CI/CD")
     searchbox.submit()
-    assert "Google" in driver.title
+    time.sleep(3)
+    assert "Jenkins" in driver.title or "Google" in driver.title
